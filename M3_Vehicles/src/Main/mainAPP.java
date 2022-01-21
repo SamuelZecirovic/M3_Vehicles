@@ -10,17 +10,21 @@ public class mainAPP {
 		// TODO Auto-generated method stub
 
 
-	 String matricula,marca, color, crear = JOptionPane.showInputDialog("Que quiere crear? \n"
-	 										  + "1)coche 2)moto");
+	 String matricula,marca, color, crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n\s2)Moto");
 		
 	 switch (crear) {
 	case "1":
-		matricula = JOptionPane.showInputDialog("matricula");
-		marca = JOptionPane.showInputDialog("marca");
-		color = JOptionPane.showInputDialog("color");
+		do 
+			matricula = JOptionPane.showInputDialog("Matricula");
 		
-		Coches c1 = new Coches(matricula,marca,color);
+		while(!comprobarMatricula(matricula));
 		
+		marca = JOptionPane.showInputDialog("Marca");
+		color = JOptionPane.showInputDialog("Color");
+		
+		Coches c1 = new Coches(matricula,marca,color,"aaa","aaa",2,2);
+
+		System.out.println(c1);
 		break;
 		
 	case "2":
@@ -32,6 +36,15 @@ public class mainAPP {
 		break;
 	}
 	 
+	}
+	
+	public static boolean comprobarMatricula(String matr) {
+		
+		if (matr.toUpperCase().matches("^[0-9]{4}[A-Z]{2,3}$")) 
+	        return true;
+	    else
+	        return false;
+	    
 	}
 
 }
