@@ -47,9 +47,155 @@ public class mainAPP {
 		}
 	}while(correcto == false);
 
+	//creacion del titular
 	Titular t1 = new Titular(nombre,apellidos,fechanacimiento,licencia,id,caducidad,seguro,garaje);
 	
+	int conductor = Integer.parseInt(JOptionPane.showInputDialog("quien conducira? \n1)el tiutlar \n2) otra persona "));
+	
+	if (conductor == 2) {
+		do {
+		correcto = true;
+		nombre = JOptionPane.showInputDialog("nombre conductor");
+		apellidos = JOptionPane.showInputDialog("apellidos conductor");
+		fechanacimiento = JOptionPane.showInputDialog("fecha de nacimiento del conductor");
+		licencia = JOptionPane.showInputDialog("tipo licencia \nC (coches) \nM (motos) \nCA(camiones)");
+		caducidad = JOptionPane.showInputDialog("caducidad licencia");
+		id = JOptionPane.showInputDialog("id licencia");
+		
+		// crear vehiculo	
+
+		 String matricula,marca, color,marcadelantera,marcatrasera, crear;
+		 double diametrodelantero, diametrotrasero;
+		 
+		 do {
+		 crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n 2)Moto\n 3)Camion");
+		 
+		 switch(crear) {
+		 case "1":
+			 if (licencia.equalsIgnoreCase("C")) {
+				correcto = true;
+			}else {
+				correcto = false;
+			}
+			 break;
+		 case "2":
+			 if (licencia.equalsIgnoreCase("M")) {
+				correcto = true;
+			}else {
+				correcto = false;
+			}
+			 break;
+		 case "3":
+			 if (licencia.equalsIgnoreCase("CA")) {
+				correcto = true;
+			}else {
+				correcto = false;
+			}
+			 break;
+		 default:
+				System.out.println("Su licencia no es correcta");
+				break;
+	
+		 }
+		 
+		 }while (correcto==true);
+		 
+		 
+		 switch (crear) {
+		 case "1":
+			do 
+				matricula = JOptionPane.showInputDialog("Matricula (1234AA / 1234AAA)");
+			
+			while(!comprobarMatricula(matricula));
+			
+			marca = JOptionPane.showInputDialog("Marca");
+			color = JOptionPane.showInputDialog("Color");
+			marcadelantera = JOptionPane.showInputDialog("marca ruedas delanteras");
+			marcatrasera = JOptionPane.showInputDialog("marca ruedas traseras");
+			
+			do 
+				diametrodelantero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas delanteras"));
+			
+			while(!comprobarDiametro(diametrodelantero));
+			
+			do 
+				diametrotrasero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas traseras"));
+			
+			while(!comprobarDiametro(diametrotrasero));
+			
+
+			Coches c1 = new Coches(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
+
+			System.out.println(c1);
+			break;
+			
+		 case "2":
+			
+			do 
+				matricula = JOptionPane.showInputDialog("Matricula (1234AA / 1234AAA)");
+			
+			while(!comprobarMatricula(matricula));
+			
+			marca = JOptionPane.showInputDialog("Marca");
+			color = JOptionPane.showInputDialog("Color");
+			marcadelantera = JOptionPane.showInputDialog("marca ruedas delanteras");
+			marcatrasera = JOptionPane.showInputDialog("marca ruedas traseras");
+			do 
+				diametrodelantero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas delanteras"));
+			
+			while(!comprobarDiametro(diametrodelantero));
+			
+			do 
+				diametrotrasero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas traseras"));
+			
+			while(!comprobarDiametro(diametrotrasero));
+			
+
+			Motos m1 = new Motos(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
+
+			System.out.println(m1);
+			
+			break;
+
+		 case "3":
+				do 
+					matricula = JOptionPane.showInputDialog("Matricula (1234AA / 1234AAA)");
+				
+				while(!comprobarMatricula(matricula));
+				
+				marca = JOptionPane.showInputDialog("Marca");
+				color = JOptionPane.showInputDialog("Color");
+				marcadelantera = JOptionPane.showInputDialog("marca ruedas delanteras");
+				marcatrasera = JOptionPane.showInputDialog("marca ruedas traseras");
+				
+				do 
+					diametrodelantero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas delanteras"));
+				
+				while(!comprobarDiametro(diametrodelantero));
+				
+				do 
+					diametrotrasero = Double.parseDouble(JOptionPane.showInputDialog("diametro ruedas traseras"));
+				
+				while(!comprobarDiametro(diametrotrasero));
+				
+
+				Camiones ca1 = new Camiones(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
+
+				System.out.println(ca1);
+				break;
+		 default:
+			System.out.println("escriba 1 para crear un coche,2 para crear una moto o 3 para camion");
+			break;
+		 }
+		
+		}while(correcto == false);
+		
+		
+	}else {
+	
+	
 	// crear vehiculo	
+
 	 String matricula,marca, color,marcadelantera,marcatrasera, crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n 2)Moto\n 3)Camion");
 	 double diametrodelantero, diametrotrasero;
 	 switch (crear) {
@@ -135,10 +281,10 @@ public class mainAPP {
 			System.out.println(ca1);
 			break;
 	 default:
-		System.out.println("escriba 1 para crear un coche o 2 para crear una moto");
+		System.out.println("escriba 1 para crear un coche,2 para crear una moto o 3 para camion");
 		break;
 	 }
-	 
+	}
 	}
 	
 	
