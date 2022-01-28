@@ -10,7 +10,7 @@ public class mainAPP {
 		// TODO Auto-generated method stub
 
 
-	 String matricula,marca, color, crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n\s2)Moto");
+	 String matricula,marca, color, crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n2)Moto");
 		
 	 switch (crear) {
 	case "1":
