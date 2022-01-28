@@ -19,4 +19,14 @@ public class Rueda {
 		else
 			System.out.println("Diametro no valido");
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Rueda [tipo=" + tipo + ", marca=" + marca + ", diametro=" + diametro + "]\n";
+	}
+	
+	
+	
 }

@@ -1,5 +1,7 @@
 package objects;
 
+import java.util.Arrays;
+
 public class Coches extends Vehiculos {
 
 	private Rueda ruedasDelanteras[] = new Rueda [2];
@@ -14,15 +16,15 @@ public class Coches extends Vehiculos {
 		
 	}
 	
-	public boolean comprobarMatricula(String matr) {
-		if (matricula.toUpperCase().matches("^[0-9]{4}[A-Z]{2,3}$")) {
-	        System.out.println("Matrícula válida");
-	        return true;
 
-	    }else{
+	@Override
+	public String toString() {
 
-	        System.out.println("Matrícula inválida");
-	        return false;
-	    }
+		return "Coches [numruedas=" + numruedas + ", matricula=" + matricula + ", marca=" + marca + ", color="
+				+ color + "]" + "\nruedasDelanteras=\n" + ruedasDelanteras[0].toString() + ruedasDelanteras[1].toString() + "ruedasTraseras=\n"
+				+ ruedasTraseras[0].toString() + ruedasTraseras[1].toString();
 	}
+	
+	
+	
 }
