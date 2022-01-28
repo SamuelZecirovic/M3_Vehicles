@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import objects.Camiones;
 import objects.Coches;
+import objects.Conductor;
 import objects.Motos;
 import objects.Titular;
 
@@ -21,6 +22,7 @@ public class mainAPP {
 		   id = JOptionPane.showInputDialog("id licencia");
 	boolean seguro = false, garaje =false, correcto = true;
 	int opcion = 0;
+	
 	//tiene seguro?
 	do {
 		opcion = Integer.parseInt(JOptionPane.showInputDialog("el titular tiene seguro? \n1) si \n2) no"));
@@ -62,7 +64,7 @@ public class mainAPP {
 		caducidad = JOptionPane.showInputDialog("caducidad licencia");
 		id = JOptionPane.showInputDialog("id licencia");
 		
-		// crear vehiculo	
+		// crear vehiculo con otro conductor que no es titular
 
 		 String matricula,marca, color,marcadelantera,marcatrasera, crear;
 		 double diametrodelantero, diametrotrasero;
@@ -100,6 +102,7 @@ public class mainAPP {
 		 
 		 }while (correcto==true);
 		 
+		 Conductor co1 = new Conductor(nombre,apellidos,fechanacimiento,licencia,id ,caducidad);
 		 
 		 switch (crear) {
 		 case "1":
@@ -127,6 +130,8 @@ public class mainAPP {
 			Coches c1 = new Coches(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 			System.out.println(c1);
+			System.out.println(co1);
+			System.out.println(t1);
 			break;
 			
 		 case "2":
@@ -154,7 +159,8 @@ public class mainAPP {
 			Motos m1 = new Motos(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 			System.out.println(m1);
-			
+			System.out.println(co1);
+			System.out.println(t1);
 			break;
 
 		 case "3":
@@ -182,6 +188,8 @@ public class mainAPP {
 				Camiones ca1 = new Camiones(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 				System.out.println(ca1);
+				System.out.println(co1);
+				System.out.println(t1);
 				break;
 		 default:
 			System.out.println("escriba 1 para crear un coche,2 para crear una moto o 3 para camion");
@@ -194,7 +202,7 @@ public class mainAPP {
 	}else {
 	
 	
-	// crear vehiculo	
+	// crear vehiculo como titular	
 
 	 String matricula,marca, color,marcadelantera,marcatrasera, crear = JOptionPane.showInputDialog("Que quiere crear? \n1)Coche\n 2)Moto\n 3)Camion");
 	 double diametrodelantero, diametrotrasero;
@@ -224,6 +232,7 @@ public class mainAPP {
 		Coches c1 = new Coches(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 		System.out.println(c1);
+		System.out.println(t1);
 		break;
 		
 	 case "2":
@@ -251,7 +260,7 @@ public class mainAPP {
 		Motos m1 = new Motos(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 		System.out.println(m1);
-		
+		System.out.println(t1);
 		break;
 
 	 case "3":
@@ -279,6 +288,7 @@ public class mainAPP {
 			Camiones ca1 = new Camiones(matricula,marca,color,marcadelantera,marcatrasera,diametrodelantero,diametrotrasero);
 
 			System.out.println(ca1);
+			System.out.println(t1);
 			break;
 	 default:
 		System.out.println("escriba 1 para crear un coche,2 para crear una moto o 3 para camion");
