@@ -11,6 +11,22 @@ public class Motos extends Vehiculos {
 		ruedasTraseras[0] = new Rueda('T',marcaT,diametroT);
 		
 	}
+	
+	public Rueda[] getRuedasDelanteras() {
+		return ruedasDelanteras;
+	}
+
+	public void setRuedasDelanteras(Rueda[] ruedasDelanteras) {
+		this.ruedasDelanteras = ruedasDelanteras;
+	}
+
+	public Rueda[] getRuedasTraseras() {
+		return ruedasTraseras;
+	}
+
+	public void setRuedasTraseras(Rueda[] ruedasTraseras) {
+		this.ruedasTraseras = ruedasTraseras;
+	}
 
 	@Override
 	public String toString() {
